@@ -24,6 +24,7 @@ export const pool = new Pool({
   allowExitOnIdle: true,
 });
 
-pool.on('error', () => {
-  console.error('Unexpected idle database client error.');
+pool.on('error', (error) => {
+  // In serverless, idle client errors can occur across invocations; log safely without crashing.
+  console.error('Unexpected idle database client error.', error?.code ?? 'unknown');
 });

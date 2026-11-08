@@ -16,7 +16,9 @@ const currentFile = fileURLToPath(import.meta.url);
 const currentDirectory = path.dirname(currentFile);
 const publicDirectory = path.resolve(currentDirectory, '../public');
 
-export const app = express();
+const app = express();
+export { app };
+export default app;
 
 app.disable('x-powered-by');
 app.set('trust proxy', 1);

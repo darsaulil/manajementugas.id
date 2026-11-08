@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laporan tugas ManajemenTugas.id." />
+    <title>Laporan — ManajemenTugas.id</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/tasks.css" />
+    <link rel="stylesheet" href="/reports.css" />
+    <script src="/dashboard-nav.js" defer></script>
+    <script type="module" src="/reports.js" defer></script>
+  </head>
+  <body class="reports-page">
+    <a class="skip-link" href="#reports-main">Lewati ke laporan</a>
+    <header class="tasks-header"><div class="container tasks-nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">manajementugas<span>.id</span></span></a><nav class="reports-nav" aria-label="Navigasi laporan"><a href="/dashboard">Dashboard</a><a href="/reports" aria-current="page">Laporan</a><a href="/settings">Pengaturan</a></nav><button class="nav-toggle icon-button" type="button" aria-expanded="false" aria-controls="reports-nav-menu" aria-label="Buka menu navigasi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><ul class="nav-menu" id="reports-nav-menu" aria-label="Navigasi laporan"><li><a href="/dashboard">Dashboard</a></li><li><a href="/reports" aria-current="page">Laporan</a></li><li><a href="/settings">Pengaturan</a></li></ul><div class="tasks-nav-actions"><span class="tasks-user" data-user-label>Memuat sesi…</span><button class="icon-button" type="button" data-theme-toggle aria-label="Aktifkan dark mode" title="Aktifkan dark mode"><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"></path></svg></button><button class="button button-ghost button-small" type="button" data-logout>Logout</button></div></div></header>
+    <main id="reports-main" class="container reports-main"><section class="reports-intro"><div><p class="eyebrow">Melihat pola, bukan sekadar angka</p><h1>Laporan yang memberi <em>konteks.</em></h1><p>Perhitungan menggunakan snapshot database UTC saat laporan dibuka. Persentase periode mengikuti jumlah selesai selama periode dibagi jumlah dibuat selama periode.</p></div></section>
+      <section class="reports-controls" aria-label="Pemilihan periode"><label>Mode laporan<select data-report-mode><option value="daily">Harian</option><option value="monthly">Bulanan</option></select></label><label data-daily-field>Tanggal<input type="date" data-report-date /></label><label data-monthly-field hidden>Bulan<input type="month" data-report-month /></label><button class="button button-primary" type="button" data-apply-report>Tampilkan laporan</button></section>
+      <p class="task-feedback" role="status" aria-live="polite" data-feedback></p><div class="task-state" data-loading>Memuat laporan…</div><div class="task-state task-state-error" data-error hidden></div>
+      <section data-report-content hidden><div class="report-snapshot" data-snapshot></div><section class="report-stats" aria-label="Ringkasan laporan"><article class="task-stat"><span>Total saat snapshot</span><strong data-stat="totalTasks">—</strong></article><article class="task-stat task-stat-blue"><span>Dibuat periode ini</span><strong data-stat="createdInPeriod">—</strong></article><article class="task-stat"><span>Selesai periode ini</span><strong data-stat="completedInPeriod">—</strong></article><article class="task-stat task-stat-blue"><span>Persentase periode</span><strong data-stat="periodCompletionPercentage">—</strong></article><article class="task-stat"><span>Selesai total</span><strong data-stat="completedTasks">—</strong></article><article class="task-stat task-stat-alert"><span>Mendesak / lewat</span><strong><span data-stat="urgentTasks">—</span> / <span data-stat="overdueTasks">—</span></strong></article></section>
+        <section class="report-panel" aria-labelledby="trend-title"><div class="report-panel-heading"><div><p class="eyebrow">Tren periode</p><h2 id="trend-title" data-report-label>Aktivitas laporan</h2></div><span class="report-legend"><span class="legend-created">Dibuat</span><span class="legend-completed">Selesai</span></span></div><div class="report-chart" data-report-chart></div></section>
+        <section class="report-panel report-comparison" data-comparison-panel hidden aria-labelledby="comparison-report-title"><div class="report-panel-heading"><div><p class="eyebrow">Owner view</p><h2 id="comparison-report-title">Perbandingan pengguna</h2></div><span class="report-panel-note">Rumus periode yang sama untuk setiap akun</span></div><div class="report-table" data-comparison></div></section>
+      </section>
+    </main>
+  </body>
+</html>

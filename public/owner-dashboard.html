@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dashboard Owner ManajemenTugas.id." />
+    <title>Owner Overview — ManajemenTugas.id</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/tasks.css" />
+    <link rel="stylesheet" href="/owner.css" />
+    <script type="module" src="/owner.js" defer></script>
+  </head>
+  <body class="owner-page">
+    <a class="skip-link" href="#owner-main">Lewati ke dashboard Owner</a>
+<header class="tasks-header">
+      <div class="container tasks-nav">
+        <!-- Hamburger menu untuk mobile -->
+        <button class="nav-toggle icon-button" type="button" aria-expanded="false" aria-controls="owner-nav-menu" aria-label="Buka menu navigasi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">manajementugas<span>.id</span></span></a>
+
+        <!-- Desktop navigation -->
+        <nav class="owner-nav-links" aria-label="Navigasi Owner"><a href="/owner/dashboard" aria-current="page">Overview</a><a href="/tasks">Semua tugas</a><a href="/reports">Laporan</a><a href="/settings">Pengaturan</a></nav>
+
+        <!-- Mobile navigation hidden by default, shown when hamburger is clicked -->
+        <ul class="nav-menu" id="owner-nav-menu" role="menu" aria-label="Navigasi Owner">
+          <li><a href="/owner/dashboard" class="nav-link" aria-label="Overview">Overview</a></li>
+          <li><a href="/tasks" class="nav-link" aria-label="Semua tugas">Semua tugas</a></li>
+          <li><a href="/reports" class="nav-link" aria-label="Laporan">Laporan</a></li>
+          <li><a href="/settings" class="nav-link" aria-label="Pengaturan">Pengaturan</a></li>
+        </ul>
+
+        <div class="tasks-nav-actions"><span class="tasks-user" data-user-label>Memuat sesi…</span><button class="icon-button" type="button" data-theme-toggle aria-label="Aktifkan dark mode" title="Aktifkan dark mode"><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"></path></svg></button><button class="button button-ghost button-small" type="button" data-logout>Logout</button></div>
+      </div>
+    </header>
+
+    <main id="owner-main" class="container owner-main">
+      <section class="owner-intro"><div><p class="eyebrow">Ruang kendali Owner</p><h1>Melihat ritme <em>secara utuh.</em></h1><p>Agregasi ini dihitung langsung dari akun dan tugas di PostgreSQL. Tidak ada angka demo di dashboard administratif.</p></div></section>
+      <p class="task-feedback" role="status" aria-live="polite" data-feedback></p>
+      <div class="task-state" data-loading>Memuat agregasi Owner…</div>
+      <div class="task-state task-state-error" data-error hidden></div>
+
+      <section class="owner-stats" aria-label="Statistik Owner" data-stats hidden>
+        <article class="task-stat"><span>Total pengguna</span><strong data-stat="totalUsers">—</strong></article>
+        <article class="task-stat task-stat-blue"><span>Akun aktif</span><strong data-stat="activeUsers">—</strong></article>
+        <article class="task-stat"><span>Akun nonaktif</span><strong data-stat="inactiveUsers">—</strong></article>
+        <article class="task-stat"><span>Total tugas</span><strong data-stat="totalTasks">—</strong></article>
+        <article class="task-stat task-stat-blue"><span>Selesai</span><strong data-stat="completedTasks">—</strong></article>
+        <article class="task-stat"><span>Belum selesai</span><strong data-stat="pendingTasks">—</strong></article>
+        <article class="task-stat task-stat-alert"><span>Mendesak / lewat</span><strong><span data-stat="urgentTasks">—</span> / <span data-stat="overdueTasks">—</span></strong></article>
+        <article class="task-stat task-stat-wide"><span>Persentase selesai</span><strong data-stat="completionPercentage">—</strong></article>
+      </section>
+
+      <section class="owner-panel" aria-labelledby="comparison-title"><div class="owner-panel-heading"><div><p class="eyebrow">Perbandingan pengguna</p><h2 id="comparison-title">Di mana pekerjaan bergerak?</h2></div><span class="owner-panel-note">Total tugas per akun</span></div><div class="owner-chart" data-user-chart><div class="task-state">Belum ada data pengguna.</div></div></section>
+
+      <section class="owner-panel" aria-labelledby="users-title"><div class="owner-panel-heading"><div><p class="eyebrow">Administrasi akun</p><h2 id="users-title">Pengguna dan ringkasannya</h2></div><p class="owner-panel-note">Menonaktifkan akun mempertahankan seluruh tugasnya.</p></div><div class="owner-filters"><label><span class="sr-only">Cari pengguna</span><input type="search" data-user-search placeholder="Cari nickname, ID, atau email…" /></label><label><span class="sr-only">Status akun</span><select data-user-status><option value="all">Semua status</option><option value="active">Aktif</option><option value="inactive">Nonaktif</option></select></label></div><div class="owner-user-list" data-user-list><div class="task-state">Memuat pengguna…</div></div></section>
+    </main>
+
+    <dialog class="task-dialog" data-user-dialog aria-labelledby="user-dialog-title"><div class="task-dialog-card owner-detail-card"><div class="task-dialog-head"><div><p class="eyebrow">Detail pengguna</p><h2 id="user-dialog-title" data-detail-title>Pengguna</h2></div><button class="icon-button" type="button" data-close-detail aria-label="Tutup detail">×</button></div><div data-detail-body></div></div></dialog>
+  </body>
+</html>

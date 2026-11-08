@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ManajemenTugas.id — ruang kerja yang lebih jernih untuk mengatur fokus dan tugas." />
+    <title>ManajemenTugas.id — Tugas lebih tertata</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+
+    <header class="site-header" data-site-header>
+      <nav class="site-nav container" aria-label="Navigasi utama">
+        <a class="brand" href="#beranda" aria-label="ManajemenTugas.id, kembali ke beranda">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-name">manajementugas<span>.id</span></span>
+        </a>
+
+        <button class="nav-toggle icon-button" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Buka menu navigasi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
+
+        <div class="nav-menu" id="primary-menu" data-nav-menu>
+          <div class="nav-links" aria-label="Tautan halaman">
+            <a class="nav-link is-active" href="#beranda">Beranda</a>
+            <a class="nav-link" href="#tentang">Tentang</a>
+            <a class="nav-link" href="#fitur">Fitur</a>
+          </div>
+          <div class="nav-actions">
+            <a class="button button-ghost button-small" href="/login">Login</a>
+            <a class="button button-primary button-small" href="/register">Daftar</a>
+            <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Aktifkan dark mode" title="Ganti tema">
+              <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" /></svg>
+              <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 15.6A8.5 8.5 0 0 1 8.4 3.7 8.5 8.5 0 1 0 20.3 15.6Z" /></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-section section" id="beranda" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Ruang kerja yang lebih jernih</p>
+            <h1 id="hero-title">Tugas lebih tertata, <em>fokus</em> lebih terjaga.</h1>
+            <p class="hero-lede">ManajemenTugas.id membantu Anda menata pekerjaan penting, melihat ritme penyelesaian, dan bergerak dengan langkah yang lebih tenang.</p>
+            <div class="hero-actions">
+              <button class="button button-primary" type="button" data-scroll-target="#demo-dashboard">Lihat contoh dashboard <span aria-hidden="true">↗</span></button>
+              <button class="button button-text" type="button" data-scroll-target="#fitur">Pelajari fitur <span aria-hidden="true">↓</span></button>
+            </div>
+            <div class="hero-meta" aria-label="Status tahap pengembangan">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>Ruang kerja tugas siap digunakan</span>
+              <span class="meta-divider" aria-hidden="true"></span>
+              <span>Tahap 4.6</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Preview visual dashboard demo">
+            <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+            <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+            <div class="demo-card hero-card">
+              <div class="demo-card-header">
+                <div>
+                  <p class="card-kicker">Preview Demo</p>
+                  <h2>Ritme hari ini</h2>
+                </div>
+                <span class="demo-badge">Contoh</span>
+              </div>
+              <div class="focus-score">
+                <div class="score-ring" aria-hidden="true"><strong>72</strong><span>%</span></div>
+                <div>
+                  <p class="metric-label">Fokus tersusun</p>
+                  <p class="metric-note">Ilustrasi data, bukan akun aktif</p>
+                </div>
+              </div>
+              <div class="mini-progress" aria-label="Contoh progres, 72 persen"><span class="mini-progress-demo"></span></div>
+              <div class="demo-list">
+                <div class="demo-list-item"><span class="task-check is-done" aria-hidden="true">✓</span><span>Rancang agenda mingguan</span><small>Selesai</small></div>
+                <div class="demo-list-item"><span class="task-check" aria-hidden="true"></span><span>Susun prioritas utama</span><small>Fokus</small></div>
+                <div class="demo-list-item"><span class="task-check" aria-hidden="true"></span><span>Review catatan proyek</span><small>Besok</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-section section" id="tentang" aria-labelledby="about-title">
+        <div class="container editorial-grid">
+          <p class="section-index">01 / Tentang</p>
+          <div class="editorial-copy">
+            <p class="eyebrow">Dibuat untuk pekerjaan yang berarti</p>
+            <h2 id="about-title">Bukan sekadar daftar. Sebuah cara melihat <em>kemajuan.</em></h2>
+            <p>Ketika semua tugas memiliki tempat yang jelas, energi Anda tidak habis untuk mengingat. ManajemenTugas.id menyatukan rencana, progres, dan refleksi dalam satu ruang yang terasa ringan.</p>
+            <div class="quote-line"><span aria-hidden="true">“</span><p>Lebih sedikit kebisingan. Lebih banyak ruang untuk menyelesaikan.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section section" id="fitur" aria-labelledby="feature-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-index">02 / Fitur</p>
+              <h2 id="feature-title">Hal-hal penting,<br /><em>di tempatnya.</em></h2>
+            </div>
+            <p class="section-intro">Fondasi pengalaman yang membantu Anda mulai, melanjutkan, dan menyelesaikan pekerjaan dengan lebih sadar.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card feature-card-accent">
+              <span class="feature-number">01</span>
+              <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h3" /></svg>
+              <h3>Susun dengan jelas</h3>
+              <p>Kelompokkan apa yang perlu dikerjakan, tentukan tenggat, lalu beri ruang untuk prioritas yang berubah.</p>
+              <span class="feature-link">Tugas yang lebih terarah <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="feature-card">
+              <span class="feature-number">02</span>
+              <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 16v-5M12 16V7M16 16v-3" /></svg>
+              <h3>Lihat ritmenya</h3>
+              <p>Gunakan ringkasan dan laporan untuk memahami pola kerja, bukan sekadar mengejar angka.</p>
+              <span class="feature-link">Progres yang bermakna <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="feature-card">
+              <span class="feature-number">03</span>
+              <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7M5 20h14" /></svg>
+              <h3>Bergerak bersama</h3>
+              <p>Bangun kebiasaan menyelesaikan satu hal penting pada satu waktu, dengan konteks yang tetap utuh.</p>
+              <span class="feature-link">Ruang untuk bertumbuh <span aria-hidden="true">→</span></span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section section" id="demo-dashboard" aria-labelledby="demo-title">
+        <div class="container">
+          <div class="demo-heading">
+            <div>
+              <p class="eyebrow">Contoh Dashboard</p>
+              <h2 id="demo-title">Satu pandangan untuk <em>hari ini.</em></h2>
+            </div>
+            <p class="demo-disclaimer"><strong>Preview Demo</strong><br />Data di bawah adalah ilustrasi visual terpisah dari akun dan database pengguna.</p>
+          </div>
+          <div class="dashboard-demo">
+            <aside class="demo-sidebar" aria-label="Navigasi demo">
+              <div class="demo-sidebar-brand"><span class="brand-mark small" aria-hidden="true"><span></span><span></span><span></span></span><span>Ruang kerja</span></div>
+              <nav>
+                <a class="demo-side-link is-current" href="#demo-dashboard"><span class="side-icon" aria-hidden="true">◈</span>Ringkasan</a>
+                <a class="demo-side-link" href="#demo-dashboard"><span class="side-icon" aria-hidden="true">□</span>Daftar tugas</a>
+                <a class="demo-side-link" href="#demo-dashboard"><span class="side-icon" aria-hidden="true">↗</span>Laporan</a>
+              </nav>
+              <div class="demo-side-note">Mode preview<br /><strong>Data ilustrasi</strong></div>
+            </aside>
+            <div class="demo-main">
+              <div class="demo-main-top"><div><p class="card-kicker">Selasa, 29 Oktober</p><h3>Selamat pagi, Anda.</h3></div><span class="avatar avatar-demo" aria-label="Avatar demo">AD</span></div>
+              <div class="stat-grid">
+                <div class="stat-card"><span class="stat-label">Tugas aktif</span><strong>12</strong><span class="stat-trend positive">+2 minggu ini</span></div>
+                <div class="stat-card stat-card-blue"><span class="stat-label">Selesai</span><strong>08</strong><span class="stat-trend">67% dari target</span></div>
+                <div class="stat-card"><span class="stat-label">Mendekati deadline</span><strong>03</strong><span class="stat-trend caution">Perlu perhatian</span></div>
+              </div>
+              <div class="demo-lower-grid">
+                <div class="panel-card"><div class="panel-heading"><div><span class="card-kicker">Fokus mingguan</span><h4>Progres penyelesaian</h4></div><span class="panel-value">67%</span></div><div class="chart-placeholder" role="img" aria-label="Grafik ilustrasi progres dari Senin sampai Minggu"><span class="chart-line"></span><span class="chart-point point-one"></span><span class="chart-point point-two"></span><span class="chart-point point-three"></span><span class="chart-point point-four"></span><span class="chart-point point-five"></span><div class="chart-labels"><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span></div></div></div>
+                <div class="panel-card priority-panel"><div class="panel-heading"><div><span class="card-kicker">Prioritas</span><h4>Berikutnya</h4></div><span class="more-button" aria-hidden="true">•••</span></div><div class="priority-item"><span class="priority-bar high"></span><div><strong>Review proposal</strong><small>Hari ini, 16.00</small></div></div><div class="priority-item"><span class="priority-bar medium"></span><div><strong>Rangkum hasil rapat</strong><small>Besok, 10.00</small></div></div><div class="priority-item"><span class="priority-bar low"></span><div><strong>Rencanakan minggu depan</strong><small>Jumat, 14.00</small></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section section" aria-labelledby="component-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div><p class="section-index">03 / Komponen</p><h2 id="component-title">Bahasa visual yang <em>konsisten.</em></h2></div>
+            <p class="section-intro">Komponen dasar ini menjadi bahasa bersama untuk formulir, status, umpan balik, dan keadaan antarmuka di tahap berikutnya.</p>
+          </div>
+          <div class="component-grid">
+            <div class="component-card"><p class="component-label">Feedback</p><div class="feedback feedback-success" role="status"><span class="feedback-icon" aria-hidden="true">✓</span><span>Perubahan tersimpan dengan aman.</span></div><div class="feedback feedback-error" role="alert"><span class="feedback-icon" aria-hidden="true">!</span><span>Periksa kembali informasi Anda.</span></div></div>
+            <div class="component-card"><p class="component-label">States</p><div class="state-row"><div class="loading-state"><span class="loading-dot"></span><span>Memuat data…</span></div><div class="empty-state"><span class="empty-icon" aria-hidden="true">□</span><span>Belum ada item</span></div></div></div>
+            <div class="component-card form-card"><p class="component-label">Form field</p><label for="sample-field">Contoh label</label><div class="input-wrap"><input id="sample-field" type="text" placeholder="Tulis sesuatu" /><span class="input-count">0/80</span></div><p class="field-hint">Bantuan singkat diletakkan dekat konteksnya.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-note-section section" aria-labelledby="auth-note-title">
+        <div class="container auth-note"><div><p class="eyebrow">Mulai dari satu langkah</p><h2 id="auth-note-title">Siap membuat ruang kerja Anda?</h2><p>Login dan registrasi terhubung ke backend, lalu Anda dapat mengelola tugas nyata dengan pencarian, filter, deadline, dan status yang tersimpan di database.</p></div><div class="auth-note-actions"><a class="button button-primary" href="/register">Daftar sekarang <span aria-hidden="true">→</span></a><a class="button button-light" href="/login">Login</a></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="#beranda"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">manajementugas<span>.id</span></span></a><p>Menata tugas. Menjaga fokus.</p><span class="footer-stage">Dashboard, laporan, dan settings · Tahap 4.6</span></div></footer>
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+  </body>
+</html>

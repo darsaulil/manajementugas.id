@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kelola tugas Anda di ManajemenTugas.id." />
+    <title>Tugas — ManajemenTugas.id</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/auth/auth.css" />
+    <link rel="stylesheet" href="/tasks.css" />
+    <script type="module" src="/tasks.js" defer></script>
+  </head>
+  <body class="tasks-page">
+    <a class="skip-link" href="#tasks-main">Lewati ke daftar tugas</a>
+    <header class="tasks-header">
+      <div class="container tasks-nav">
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">manajementugas<span>.id</span></span></a>
+
+        <!-- Hamburger menu untuk mobile -->
+        <button class="nav-toggle icon-button" type="button" aria-expanded="false" aria-controls="tasks-nav-menu" aria-label="Buka menu navigasi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
+
+        <!-- Desktop navigation visible on large screens -->
+        <div class="tasks-page-links" aria-label="Navigasi ruang kerja"><a href="/dashboard" aria-current="page">Tugas</a><a href="/reports">Laporan</a><a href="/settings">Pengaturan</a></div>
+
+        <!-- Mobile navigation hidden by default, shown when hamburger is clicked -->
+        <ul class="nav-menu" id="tasks-nav-menu" role="menu" aria-label="Navigasi ruang kerja">
+          <li><a href="/dashboard" class="nav-link" aria-label="Dashboard">Tugas</a></li>
+          <li><a href="/reports" class="nav-link" aria-label="Laporan">Laporan</a></li>
+          <li><a href="/settings" class="nav-link" aria-label="Pengaturan">Pengaturan</a></li>
+        </ul>
+
+        <div class="tasks-nav-actions">
+          <span class="tasks-user" data-user-label>Memuat sesi…</span>
+          <button class="icon-button" type="button" data-theme-toggle aria-label="Aktifkan dark mode" title="Aktifkan dark mode">
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"></path></svg>
+          </button>
+          <button class="button button-ghost button-small" type="button" data-logout>Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="tasks-main" class="container tasks-main">
+      <section class="tasks-intro" aria-labelledby="tasks-title">
+        <div>
+          <p class="eyebrow">Ruang kerja nyata</p>
+          <h1 id="tasks-title">Tugas yang bergerak <em>bersama Anda.</em></h1>
+          <p class="tasks-lede">Semua perubahan tersimpan ke PostgreSQL. Gunakan pencarian dan filter untuk menemukan prioritas berikutnya.</p>
+        </div>
+        <button class="button button-primary" type="button" data-open-task-form>+ Tambah tugas</button>
+      </section>
+
+      <section class="task-stats" aria-label="Ringkasan tugas" data-summary>
+        <article class="task-stat"><span>Total tugas</span><strong data-stat="total">—</strong></article>
+        <article class="task-stat task-stat-blue"><span>Belum selesai</span><strong data-stat="pending">—</strong></article>
+        <article class="task-stat"><span>Selesai</span><strong data-stat="completed">—</strong></article>
+        <article class="task-stat task-stat-alert"><span>Mendesak / lewat</span><strong><span data-stat="urgent">—</span> / <span data-stat="overdue">—</span></strong></article>
+        <article class="task-stat task-stat-wide"><span>Persentase selesai</span><strong data-stat="completionPercentage">—</strong></article>
+      </section>
+
+      <section class="tasks-toolbar" aria-label="Pencarian dan filter tugas">
+        <label class="task-search"><span class="sr-only">Cari nama tugas</span><input type="search" data-filter-search placeholder="Cari nama tugas…" autocomplete="off" /></label>
+        <label><span class="sr-only">Jenis tugas</span><select data-filter-type><option value="">Semua jenis</option><option value="biasa">Biasa</option><option value="ribet">Ribet</option><option value="prioritas">Prioritas</option></select></label>
+        <label><span class="sr-only">Status tugas</span><select data-filter-status><option value="">Semua status</option><option value="pending">Belum selesai</option><option value="completed">Selesai</option></select></label>
+        <label><span class="sr-only">Filter deadline</span><select data-filter-flag><option value="">Semua deadline</option><option value="urgent">Mendesak 3 hari</option><option value="overdue">Kedaluwarsa</option></select></label>
+        <button class="button button-ghost button-small" type="button" data-reset-filters>Reset</button>
+      </section>
+
+      <p class="task-feedback" role="status" aria-live="polite" data-feedback></p>
+      <div class="task-state" data-loading>Memuat tugas dari database…</div>
+      <div class="task-state task-state-error" data-error hidden></div>
+      <div class="task-state task-state-empty" data-empty hidden>
+        <strong>Belum ada tugas yang cocok.</strong>
+        <span>Buat tugas baru atau ubah filter untuk melihat hasil lainnya.</span>
+      </div>
+      <section class="task-list" aria-label="Daftar tugas" data-task-list></section>
+    </main>
+
+    <dialog class="task-dialog" data-task-dialog aria-labelledby="task-dialog-title">
+      <form method="dialog" class="task-dialog-card" data-task-form>
+        <div class="task-dialog-head"><div><p class="eyebrow" data-form-kicker>Tugas baru</p><h2 id="task-dialog-title" data-form-title>Tambah tugas</h2></div><button class="icon-button" type="button" data-close-task-form aria-label="Tutup formulir">×</button></div>
+        <p class="task-feedback" role="alert" data-form-feedback></p>
+        <label class="task-field">Nama tugas<input name="title" maxlength="200" required /></label>
+        <label class="task-field">Deskripsi <span>(opsional)</span><textarea name="description" maxlength="5000" rows="3"></textarea></label>
+        <div class="task-field-grid"><label class="task-field">Jenis<select name="taskType"><option value="biasa">Biasa</option><option value="ribet">Ribet</option><option value="prioritas">Prioritas</option></select></label><label class="task-field">Deadline<input name="deadline" type="datetime-local" required /></label></div>
+        <label class="task-field" data-form-status hidden>Status<select name="status"><option value="pending">Belum selesai</option><option value="completed">Selesai</option></select></label>
+        <div class="task-dialog-actions"><button class="button button-ghost" type="button" data-close-task-form>Batal</button><button class="button button-primary" type="submit" data-submit-task>Simpan tugas</button></div>
+      </form>
+    </dialog>
+
+    <dialog class="task-dialog" data-delete-dialog aria-labelledby="delete-dialog-title">
+      <div class="task-dialog-card task-confirm-card"><p class="eyebrow">Konfirmasi</p><h2 id="delete-dialog-title">Hapus tugas ini?</h2><p>Tindakan ini menghapus tugas dari database dan tidak dapat dibatalkan.</p><div class="task-dialog-actions"><button class="button button-ghost" type="button" data-cancel-delete>Batal</button><button class="button button-danger" type="button" data-confirm-delete>Hapus tugas</button></div></div>
+    </dialog>
+  </body>
+</html>

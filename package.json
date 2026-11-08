@@ -1,0 +1,36 @@
+{
+  "name": "manajementugas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Manajemen tugas, dashboard, laporan, dan pengaturan akun untuk ManajemenTugas.id",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "npm@10.9.9",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "preview": "set COOKIE_SAMESITE=none&& set COOKIE_SECURE=true&& npm start",
+    "db:migrate": "node scripts/db-migrate.js",
+    "db:seed": "node scripts/db-seed.js",
+    "check": "node scripts/check.js",
+    "test": "node scripts/run-tests.js",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "e2e:install": "playwright install chromium"
+  },
+  "dependencies": {
+    "cookie": "^2.0.1",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "nodemailer": "^10.3.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0"
+  }
+}

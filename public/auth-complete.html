@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sesi aktif — ManajemenTugas.id</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/auth/auth.css" />
+    <script type="module" src="/auth/auth.js" defer></script>
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="auth-panel auth-panel-info">
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">manajementugas<span>.id</span></span></a>
+        <p class="eyebrow">Sesi terverifikasi</p>
+        <h1>Ruang kerja Anda siap dilanjutkan.</h1>
+        <p>Autentikasi sudah aktif. Dashboard bisnis akan dibangun pada tahap berikutnya tanpa menggunakan data demo sebagai data akun.</p>
+      </section>
+      <section class="auth-panel auth-panel-form" aria-labelledby="auth-complete-title">
+        <div class="auth-form-head"><p class="eyebrow">Akses berhasil</p><h2 id="auth-complete-title">Selamat datang kembali.</h2><p data-auth-user>Memeriksa sesi…</p></div>
+        <div class="feedback feedback-success" role="status"><span class="feedback-icon" aria-hidden="true">✓</span><span>Sesi server-side aktif dengan cookie HttpOnly.</span></div>
+        <button class="button button-primary auth-submit" type="button" data-logout>Logout</button>
+        <a class="auth-back" href="/">Kembali ke halaman publik</a>
+      </section>
+    </main>
+  </body>
+</html>
